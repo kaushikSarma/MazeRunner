@@ -1,0 +1,125 @@
+<!DOCTPYE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Maze Runner">
+    <meta name="keywords" content="HTML,CSS,JSON,JavaScript">
+    <meta name="author" content="Divya Mamgai">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #222222;
+            color: #cccccc;
+            padding: 10px;
+        }
+        
+        #Head {
+            margin-top: -5px;
+        }
+        
+        #Head td {
+            font-weight: 800;
+        }
+        
+        #Wrapper {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        #Display {
+            margin-top: 10px;
+        }
+        
+        #Display td {
+            width: 32px;
+            height: 32px;
+        }
+        
+        #Display .Wall {
+            background-color: #424242;
+        }
+        
+        #Display .Way {
+            background-color: #cacaca;
+        }
+        
+        #Display .Path {
+            background-color: #ff4545;
+        }
+        
+        #Overlay {
+            margin-top: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #Overlay td {
+            width: 32px;
+            height: 32px;
+        }
+        
+        #Overlay .Wall {
+            background: none;
+        }
+        
+        #Overlay .Way {
+            background-color: #ff4545;
+            opacity: 0;
+            position: relative;
+        }
+        
+        .Button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 8px;
+            background-color: #686868;
+            color: #cccccc;
+            transition: all 0.5s;
+            width: 200px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        .Button:hover {
+            background-color: #555555;
+            color: #ffffff;
+            transition: all 0.5s;
+        }
+    </style>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="TweenMax.js"></script>
+    <script type="text/javascript" src="MazeRunner.js"></script>
+</head>
+
+<body>
+    <div id="Maze">
+        <table id="Head" width="auto" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td colspan="8">
+                        <a class="Button" id="ComputeButton" href="#Head">Perform Computation</a>
+                        <a class="Button" id="SelfButton" href="#Display">Solve On Your Own <br>Controls : [W, A, S, D]</a>
+                        <a class="Button" id="CreateMaze" href="Creator">Maze Creator<br>Create Maze interactively and
+                    quickly.<br> - <i>Kaushik Sharma</i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Ways"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="Wrapper">
+            <table id="Display" border="0" cellpadding="0" cellspacing="0">
+                <tbody></tbody>
+            </table>
+            <table id="Overlay" border="0" cellpadding="0" cellspacing="0">
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

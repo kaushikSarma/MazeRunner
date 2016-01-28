@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Maze Runner">
+    <meta name="keywords" content="HTML,CSS,JSON,JavaScript">
+    <meta name="author" content="Kaushik Sarma">
+    <script src="../jquery.js"></script>
+    <script src="main.js"></script>
+    <script src="../TweenMax.js"></script>
+    <style>
+        body {
+            background-color: black;
+            position: absolute;
+            display: grid;
+            align-content: center;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        
+        .screen {
+            border: 2px solid white;
+            margin-left: 10px;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            opacity: 0;
+        }
+        
+        .mazeFrame {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            cursor: cell;
+        }
+        
+        .block {
+            /*position: absolute;*/
+            height: 30px;
+            width: 30px;
+            background-color: white;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+        
+        .blockOff {
+            background-color: transparent;
+        }
+        
+        .button_inactive {
+            background-color: darkcyan;
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            cursor: default;
+        }
+        
+        .button {
+            background-color: lightcyan;
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 0px 1px white;
+            transition: all 1s;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+        
+        .button:hover {
+            box-shadow: 0px 0px 30px cyan;
+            text-shadow: 1px 1px 3px black;
+            color: white;
+            background-color: white;
+        }
+        
+        #title {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body contenteditable="false">
+    <div style="display : inline-flex">
+        <div style="padding : 10px">
+            <span id="title">NUMBER OF ROWS IN MAZE : </span>
+            <input type="number" id="nrow"></input>
+        </div>
+        <div style="padding : 10px">
+            <span id="title">NUMBER OF COLUMNS IN MAZE : </span>
+            <input type="number" id="ncol"></input>
+        </div>
+    </div>
+    <div style="display : inline-flex">
+        <div class="gen_maze button">GENERATE MAZE</div>
+        <div class="generate button_inactive">GENERATE ARRAY</div>
+        <div class="display button_inactive">DISPLAY ARRAY</div>
+    </div>
+    <br>
+
+    <div style="display : inline-flex">
+        <div class="mazeFrame"></div>
+        <div class="screen"></div>
+    </div>
+</body>
+
+</html>
